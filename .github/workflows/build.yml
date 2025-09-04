@@ -45,7 +45,7 @@ jobs:
       - name: Ensure build tools (no reinstall)
         run: |
           brew update
-          for pkg in cmake ninja nasm yasm pkg-config autoconf automake libtool; do
+          for pkg in cmake ninja meson nasm yasm pkg-config autoconf automake libtool; do
             if ! brew list --versions "$pkg" >/dev/null 2>&1; then
               brew install "$pkg"
             else
